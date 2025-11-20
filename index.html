@@ -3,19 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Secaps Black Chá - A transformação que você merece está a uma dose de distância. Acelere seu metabolismo em 10 minutos!">
-    <title>Secaps Black Chá - Transforme Seu Corpo em Dias</title>
+    <meta name="description" content="Secaps Black Chá - Transforme seu corpo em dias">
+    <title>Secaps Black Chá - Sua Transformação Começa Aqui</title>
     
-    <!-- Fonts Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Russo+One&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* ============================================
-           ESTILOS CSS COMPLETOS
-           ============================================ */
-        
         * {
             margin: 0;
             padding: 0;
@@ -100,7 +95,7 @@
             50% { transform: scale(1.05); }
         }
 
-        /* NOTIFICAÇÃO DE VENDAS */
+        /* NOTIFICAÇÃO VENDAS */
         .sales-notification {
             position: fixed;
             bottom: 30px;
@@ -219,7 +214,7 @@
             margin: 0 auto 3rem;
         }
 
-        /* GRID GENÉRICO */
+        /* GRID */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -257,6 +252,50 @@
             color: var(--gray);
         }
 
+        /* ANTES/DEPOIS */
+        .before-after-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .before-after-card {
+            background: var(--light-bg);
+            border: 2px solid rgba(131, 252, 233, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .before-after-card:hover {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(131, 252, 233, 0.3);
+        }
+
+        .before-after-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .before-after-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .before-after-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .before-after-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
         /* DEPOIMENTOS */
         .testimonial {
             background: var(--light-bg);
@@ -267,6 +306,7 @@
             grid-template-columns: 150px 1fr;
             gap: 2rem;
             align-items: start;
+            margin-bottom: 2rem;
         }
 
         .testimonial img {
@@ -292,6 +332,156 @@
             color: var(--primary);
             font-weight: 600;
             font-style: normal;
+        }
+
+        /* BÔNUS */
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .bonus-card {
+            background: var(--light-bg);
+            border: 2px solid rgba(131, 252, 233, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .bonus-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(131, 252, 233, 0.3);
+        }
+
+        .bonus-card.featured {
+            border-color: var(--primary);
+            border-width: 3px;
+        }
+
+        .bonus-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .bonus-card img {
+            width: 100%;
+            max-width: 200px;
+            margin: 1rem 0;
+        }
+
+        .bonus-label {
+            display: block;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bonus-card h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .bonus-price {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--red);
+            font-size: 1rem;
+        }
+
+        .new-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        /* PARA QUEM É / NÃO É */
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .who-card {
+            border-radius: 20px;
+            padding: 2.5rem;
+        }
+
+        .who-card.for {
+            background: rgba(131, 252, 233, 0.05);
+            border: 3px solid var(--primary);
+        }
+
+        .who-card.not-for {
+            background: rgba(167, 0, 0, 0.05);
+            border: 3px solid var(--red);
+        }
+
+        .who-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .who-card.for h3 {
+            color: var(--primary);
+        }
+
+        .who-card.not-for h3 {
+            color: var(--red);
+        }
+
+        .who-card ul {
+            list-style: none;
+        }
+
+        .who-card li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .who-card.for li {
+            background: rgba(131, 252, 233, 0.1);
+        }
+
+        .who-card.for li::before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .who-card.not-for li {
+            background: rgba(167, 0, 0, 0.1);
+        }
+
+        .who-card.not-for li::before {
+            content: "✗ ";
+            color: var(--red);
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
         }
 
         /* BARRA ESCASSEZ */
@@ -335,20 +525,34 @@
             transition: width 1s ease;
         }
 
-        /* OFERTAS */
+        /* OFERTAS - GRID CORRIGIDO */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
         .offer-card {
             background: var(--light-bg);
             border: 2px solid rgba(131, 252, 233, 0.2);
             border-radius: 20px;
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
             position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(131, 252, 233, 0.3);
         }
 
         .offer-card.featured {
             border-color: var(--primary);
             border-width: 3px;
-            transform: scale(1.05);
         }
 
         .offer-badge {
@@ -358,30 +562,90 @@
             transform: translateX(-50%);
             background: var(--gradient);
             color: var(--dark);
-            padding: 8px 25px;
+            padding: 8px 20px;
             border-radius: 20px;
             font-weight: 700;
+            font-size: 0.85rem;
             text-transform: uppercase;
+            white-space: nowrap;
         }
 
         .offer-card img {
             width: 100%;
-            max-width: 300px;
+            max-width: 200px;
+            margin: 1rem auto;
+        }
+
+        .offer-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .offer-subtitle {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            min-height: 40px;
+        }
+
+        .old-price-box {
+            background: rgba(167, 0, 0, 0.2);
+            padding: 8px;
+            border-radius: 10px;
             margin: 1rem 0;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .old-price-box span {
+            text-decoration: line-through;
+            color: var(--red);
+            font-size: 1rem;
         }
 
         .main-price {
             display: flex;
             align-items: baseline;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             margin: 1rem 0;
         }
 
-        .installments { font-size: 1.5rem; font-weight: 600; }
-        .price-value { font-size: 2.5rem; font-weight: 700; }
+        .installments { font-size: 1.2rem; font-weight: 600; }
+        .price-value { font-size: 2rem; font-weight: 700; }
+        .cash-price { color: var(--gray); font-size: 0.95rem; margin-bottom: 1rem; }
+
+        .offer-card .cta-button {
+            width: 100%;
+            padding: 1rem;
+            font-size: 0.95rem;
+            margin-top: auto;
+        }
+
+        .offer-features {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(131, 252, 233, 0.2);
+        }
+
+        .shipping-logo {
+            width: 120px;
+            margin-bottom: 0.5rem;
+        }
+
+        .shipping-free {
+            font-size: 1rem;
+            font-weight: 700;
+        }
 
         /* FAQ */
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
         .faq-item {
             background: var(--light-bg);
             border: 2px solid rgba(131, 252, 233, 0.2);
@@ -402,11 +666,13 @@
             cursor: pointer;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
         .faq-icon {
             font-size: 2rem;
             transition: transform 0.3s;
+            flex-shrink: 0;
         }
 
         .faq-item.active .faq-icon {
@@ -429,7 +695,7 @@
             color: var(--gray);
         }
 
-        /* WHATSAPP FLUTUANTE */
+        /* WHATSAPP */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -441,8 +707,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 30px;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
             z-index: 9998;
             animation: pulse 2s ease-in-out infinite;
@@ -469,18 +733,31 @@
         }
 
         /* RESPONSIVO */
+        @media (max-width: 1024px) {
+            .offers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .bonus-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .logo { max-width: 300px; }
             .testimonial { grid-template-columns: 1fr; text-align: center; }
             .testimonial img { margin: 0 auto; }
             .sales-notification { left: 15px; right: 15px; max-width: none; }
             .grid { grid-template-columns: 1fr; }
+            .who-grid { grid-template-columns: 1fr; }
+            .offers-grid { grid-template-columns: 1fr; }
+            .before-after-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NOTIFICAÇÃO DE VENDAS -->
+    <!-- NOTIFICAÇÃO VENDAS -->
     <div id="sales-notification" class="sales-notification">
         <div class="sales-notification-content">
             <div class="sales-notification-icon">✓</div>
@@ -494,7 +771,7 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <!-- ⚠️ TROCAR: Logo do produto -->
+            <!-- ⚠️ TROCAR: Logo -->
             <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/logo-secaps-black-cha-png.png" alt="Secaps Black Chá" class="logo">
             
             <h1 class="hero-title">
@@ -538,59 +815,49 @@
             
             <p class="section-subtitle">
                 Você acorda todo dia prometendo que <strong>hoje vai ser diferente</strong>. 
-                Mas ao olhar no espelho, aquela sensação de <strong>derrota</strong> volta. 
-                Você não está sozinha – milhares de mulheres sentem essa <strong>dor silenciosa</strong> todos os dias.
+                Mas ao olhar no espelho, aquela sensação de <strong>derrota</strong> volta.
             </p>
             
             <div class="grid">
-                <!-- ⚠️ TROCAR: Imagens das dores (6 imagens) -->
+                <!-- ⚠️ TROCAR: 6 imagens das dores -->
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/11.png" alt="Sem energia">
                     <h4>Você se arrasta pela manhã?</h4>
-                    <p>Aquela sensação de <strong>peso</strong>, de que o corpo <strong>não responde</strong>. 
-                    Você mal consegue levantar da cama, imagina ter energia para cuidar de você mesma...</p>
+                    <p>Aquela sensação de <strong>peso</strong>, de que o corpo <strong>não responde</strong>.</p>
                 </div>
                 
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/7.png" alt="Autoestima">
                     <h4>Evita tirar fotos ou olhar no espelho?</h4>
-                    <p>A cada roupa que não serve mais, a cada convite que você recusa... 
-                    A <strong>vergonha</strong> rouba seus melhores momentos.</p>
+                    <p>A <strong>vergonha</strong> rouba seus melhores momentos.</p>
                 </div>
                 
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/12.png" alt="Praia">
                     <h4>Fugiu da praia ou eventos sociais?</h4>
-                    <p>Aquele convite para a praia vira ansiedade. A festa da amiga? Você inventa desculpa. 
-                    O <strong>medo do julgamento</strong> está matando sua vida social.</p>
+                    <p>O <strong>medo do julgamento</strong> está matando sua vida social.</p>
                 </div>
                 
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/8.png" alt="Doces">
                     <h4>A vontade de doce não te deixa em paz?</h4>
-                    <p>Você promete que vai parar, mas <strong>não consegue</strong>. Não é fraqueza – 
-                    é química do seu corpo desregulada.</p>
+                    <p>Não é fraqueza – é química do seu corpo desregulada.</p>
                 </div>
                 
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/9.png" alt="Ansiedade">
                     <h4>Ansiedade e insônia te consomem?</h4>
-                    <p>A noite chega e <strong>a cabeça não desliga</strong>. Você dorme mal, acorda pior, 
-                    e o ciclo se repete... exausta, sem esperança.</p>
+                    <p>Você dorme mal, acorda pior, e o ciclo se repete...</p>
                 </div>
                 
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/10.png" alt="Exercício">
                     <h4>Desiste dos exercícios em 5 minutos?</h4>
-                    <p>Você tenta, mas o corpo <strong>não aguenta</strong>. A frustração é tanta que você desiste 
-                    antes mesmo de começar.</p>
+                    <p>O corpo <strong>não aguenta</strong>. A frustração é tanta...</p>
                 </div>
             </div>
             
             <div style="background: rgba(131, 252, 233, 0.05); border: 2px solid var(--primary); border-radius: 20px; padding: 2rem; max-width: 900px; margin: 3rem auto; text-align: center;">
-                <p style="font-size: 1.2rem; line-height: 1.8;">
-                    Nós sabemos <strong>exatamente</strong> como você se sente. Mas preciso te contar uma verdade:
-                </p>
                 <p style="font-size: 1.3rem; font-weight: 700;" class="gradient-text">
                     NADA DISSO É CULPA SUA.
                 </p>
@@ -605,29 +872,26 @@
                 A <span class="gradient-text">Conspiração</span> Que Te Mantém Presa Na Obesidade
             </h2>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 3rem;">
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; margin-top: 3rem;">
                 <div>
                     <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 1.5rem;">
-                        O mundo está <strong>empurrando a obesidade</strong> para você com alimentos processados cheios de 
-                        substâncias viciantes, Fast Foods estrategicamente posicionados, e uma indústria farmacêutica que 
-                        <strong>lucra bilhões</strong> com suas doenças.
+                        O mundo está <strong>empurrando a obesidade</strong> para você. Fast Foods, alimentos processados, 
+                        uma indústria farmacêutica que <strong>lucra bilhões</strong> com suas doenças.
                     </p>
                     
                     <p style="font-size: 1.2rem; background: rgba(131, 252, 233, 0.1); padding: 1.5rem; border-left: 4px solid var(--primary); border-radius: 10px;">
-                        Mas hoje isso acaba. Hoje você descobre o <strong>segredo</strong> que a indústria escondeu de você 
-                        por anos. Um método que <strong>ataca a obesidade na raiz</strong>.
+                        Mas hoje isso acaba. Hoje você descobre o <strong>segredo</strong> que a indústria escondeu de você.
                     </p>
                     
                     <h3 class="gradient-text" style="margin: 2rem 0 1rem;">O Segredo Está Finalmente Disponível!</h3>
                     
                     <p style="font-size: 1.1rem;">
-                        <strong>Secaps Black Chá Energy</strong> não é apenas mais um suplemento. 
-                        Ele <strong>reativa seu metabolismo adormecido</strong>, dá <strong>energia explosiva</strong> 
-                        e ajuda a <strong>queimar gordura localizada</strong> com eficácia comprovada.
+                        <strong>Secaps Black Chá Energy</strong> <strong>reativa seu metabolismo</strong>, dá 
+                        <strong>energia explosiva</strong> e ajuda a <strong>queimar gordura</strong> com eficácia comprovada.
                     </p>
                 </div>
                 
-                <!-- ⚠️ TROCAR: GIF do produto -->
+                <!-- ⚠️ TROCAR: GIF -->
                 <div>
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/imagem-para-gif-2.gif" 
                          alt="Secaps Black Chá" 
@@ -637,31 +901,74 @@
         </div>
     </section>
 
-    <!-- DEPOIMENTOS -->
+    <!-- ANTES/DEPOIS -->
     <section style="background: var(--dark);">
         <div class="container">
             <h2 class="section-title">
-                <span class="gradient-text">Transformações Reais</span> de Quem Teve Coragem de Mudar
+                <span class="gradient-text">Transformações Reais</span> Que Provam Que Funciona
             </h2>
             
             <p class="section-subtitle">
-                Essas mulheres estavam exatamente onde você está agora. Cansadas de promessas vazias. 
-                Mas elas deram <strong>um passo</strong> – e a vida delas mudou para sempre.
+                Veja as mudanças incríveis que o Secaps Black Chá proporcionou. 
+                <strong>Resultados reais</strong> de pessoas reais!
             </p>
             
-            <div style="display: grid; gap: 2rem; margin-top: 3rem;">
-                <!-- ⚠️ TROCAR: 5 fotos de depoimentos e 5 áudios MP3 -->
+            <div class="before-after-grid">
+                <!-- ⚠️ TROCAR: 4 imagens ANTES/DEPOIS -->
+                <div class="before-after-card">
+                    <img src="IMAGEM-ANTES-DEPOIS-1.jpg" alt="Transformação 1">
+                    <div class="before-after-info">
+                        <h4>-15kg em 8 semanas</h4>
+                        <p>Ana perdeu a barriga e ganhou autoestima!</p>
+                    </div>
+                </div>
                 
+                <div class="before-after-card">
+                    <img src="IMAGEM-ANTES-DEPOIS-2.jpg" alt="Transformação 2">
+                    <div class="before-after-info">
+                        <h4>-22kg em 3 meses</h4>
+                        <p>Mariana voltou a usar biquíni aos 38 anos!</p>
+                    </div>
+                </div>
+                
+                <div class="before-after-card">
+                    <img src="IMAGEM-ANTES-DEPOIS-3.jpg" alt="Transformação 3">
+                    <div class="before-after-info">
+                        <h4>-18kg em 10 semanas</h4>
+                        <p>Camila recuperou sua energia e vitalidade!</p>
+                    </div>
+                </div>
+                
+                <div class="before-after-card">
+                    <img src="IMAGEM-ANTES-DEPOIS-4.jpg" alt="Transformação 4">
+                    <div class="before-after-info">
+                        <h4>-12kg em 6 semanas</h4>
+                        <p>Juliana se livrou da compulsão por doces!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title">
+                O Que Elas Têm a <span class="gradient-text">Dizer</span>
+            </h2>
+            
+            <div style="margin-top: 3rem;">
+                <!-- ⚠️ TROCAR: 5 fotos + 5 áudios -->
                 <div class="testimonial">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/845230ec-da89-4f40-bcc0-fe8f9a12882f.jpg" alt="Ana Clara">
                     <div>
-                        <!-- ⚠️ TROCAR: Áudio 1 - Ana Clara -->
+                        <!-- ⚠️ TROCAR: Áudio 1 -->
                         <audio controls>
                             <source src="SEU-AUDIO-1.mp3" type="audio/mpeg">
                         </audio>
                         <blockquote>
-                            "Secaps Black Chá mudou minha vida! Me sinto mais leve, cheia de energia e muito mais confiante. 
-                            Nunca achei que um chá pudesse fazer tanto! Perdi 12kg em 6 semanas."
+                            "Secaps Black Chá mudou minha vida! Me sinto mais leve, cheia de energia. 
+                            Perdi 12kg em 6 semanas."
                         </blockquote>
                         <cite>Ana Clara, 29 anos - São Paulo/SP</cite>
                     </div>
@@ -670,13 +977,12 @@
                 <div class="testimonial">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/d0acffce-6c1b-4b83-ba44-4a77faa23f6b.jpg" alt="Mariana">
                     <div>
-                        <!-- ⚠️ TROCAR: Áudio 2 - Mariana -->
+                        <!-- ⚠️ TROCAR: Áudio 2 -->
                         <audio controls>
                             <source src="SEU-AUDIO-2.mp3" type="audio/mpeg">
                         </audio>
                         <blockquote>
-                            "Em apenas alguns dias, já percebi meu corpo respondendo! Minha disposição aumentou e aquela 
-                            sensação de inchaço sumiu. Recomendo demais!"
+                            "Em poucos dias já percebi meu corpo respondendo! A sensação de inchaço sumiu!"
                         </blockquote>
                         <cite>Mariana, 34 anos - Rio de Janeiro/RJ</cite>
                     </div>
@@ -685,13 +991,12 @@
                 <div class="testimonial">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/d261f831-50f8-4220-8102-48ca8d6974ae.jpg" alt="Juliana">
                     <div>
-                        <!-- ⚠️ TROCAR: Áudio 3 - Juliana -->
+                        <!-- ⚠️ TROCAR: Áudio 3 -->
                         <audio controls>
                             <source src="SEU-AUDIO-3.mp3" type="audio/mpeg">
                         </audio>
                         <blockquote>
-                            "Eu não acreditava em chás para emagrecer, mas resolvi tentar. Que surpresa maravilhosa! 
-                            Perdi 18kg, minha pele melhorou e minha autoestima foi lá em cima!"
+                            "Perdi 18kg, minha pele melhorou e minha autoestima foi lá em cima!"
                         </blockquote>
                         <cite>Juliana, 41 anos - Belo Horizonte/MG</cite>
                     </div>
@@ -700,13 +1005,12 @@
                 <div class="testimonial">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/39bdc0e4-53c2-4475-b018-bed7752f096a.jpg" alt="Camila">
                     <div>
-                        <!-- ⚠️ TROCAR: Áudio 4 - Camila -->
+                        <!-- ⚠️ TROCAR: Áudio 4 -->
                         <audio controls>
                             <source src="SEU-AUDIO-4.mp3" type="audio/mpeg">
                         </audio>
                         <blockquote>
-                            "O Secaps Black Chá me ajudou a sair do efeito sanfona. Agora, consigo manter meu peso e 
-                            me sinto incrível todos os dias."
+                            "Saí do efeito sanfona. Consigo manter meu peso e me sinto incrível!"
                         </blockquote>
                         <cite>Camila, 37 anos - Curitiba/PR</cite>
                     </div>
@@ -715,13 +1019,12 @@
                 <div class="testimonial">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/45c7ca5d-3199-4f4e-ab1a-fff5d71e7f8c.jpg" alt="Fernanda">
                     <div>
-                        <!-- ⚠️ TROCAR: Áudio 5 - Fernanda -->
+                        <!-- ⚠️ TROCAR: Áudio 5 -->
                         <audio controls>
                             <source src="SEU-AUDIO-5.mp3" type="audio/mpeg">
                         </audio>
                         <blockquote>
-                            "Além de me ajudar a emagrecer, esse chá me deu uma energia surreal! Estou mais produtiva, 
-                            mais feliz e me sentindo mais bonita do que nunca!"
+                            "Esse chá me deu uma energia surreal! Estou mais produtiva e feliz!"
                         </blockquote>
                         <cite>Fernanda, 45 anos - Porto Alegre/RS</cite>
                     </div>
@@ -735,202 +1038,302 @@
     </section>
 
     <!-- INGREDIENTES -->
-    <section style="background: var(--light-bg);">
+    <section style="background: var(--dark);">
         <div class="container">
             <h2 class="section-title">
-                <span class="gradient-text">Secaps Black Chá:</span> A Fórmula Científica Que 
-                <span class="gradient-text">Detona Gordura</span>
+                <span class="gradient-text">Secaps Black Chá:</span> A Fórmula Científica
             </h2>
             
             <p class="section-subtitle">
-                Não é mágica. É <strong>CIÊNCIA</strong>. Cada ingrediente foi escolhido estrategicamente para 
-                atacar a obesidade em múltiplas frentes.
+                Não é mágica. É <strong>CIÊNCIA</strong>. Cada ingrediente ataca a obesidade em múltiplas frentes.
             </p>
             
             <div class="grid">
-                <!-- ⚠️ TROCAR: 6 imagens de ingredientes -->
+                <!-- ⚠️ TROCAR: 6 imagens ingredientes -->
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/13.png" alt="Maltodextrina">
                     <h3 class="gradient-text">Maltodextrina</h3>
-                    <p>Fornece <strong>energia limpa</strong> sem picos de glicose. Acelera o metabolismo e mantém você 
-                    <strong>ativa o dia todo</strong>.</p>
+                    <p>Energia limpa sem picos de glicose. Acelera o metabolismo.</p>
                 </div>
                 
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/17.png" alt="Psyllium">
                     <h3 class="gradient-text">Psyllium</h3>
-                    <p>O <strong>segredo da saciedade</strong>. Melhora digestão e cria sensação de 
-                    <strong>barriga cheia</strong> por horas.</p>
+                    <p>O segredo da saciedade. Sensação de barriga cheia por horas.</p>
                 </div>
                 
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/15.png" alt="Curcumina">
                     <h3 class="gradient-text">Curcumina</h3>
-                    <p>Poderoso <strong>anti-inflamatório</strong>. Regula insulina e acelera a 
-                    <strong>queima de gordura visceral</strong>.</p>
+                    <p>Anti-inflamatório natural. Acelera queima de gordura visceral.</p>
                 </div>
                 
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/14.png" alt="Hibisco">
                     <h3 class="gradient-text">Hibisco</h3>
-                    <p>O <strong>exterminador da barriga</strong>. Reduz gordura abdominal, elimina inchaço e 
-                    <strong>desincha em dias</strong>.</p>
+                    <p>Exterminador da barriga. Reduz gordura abdominal rapidamente.</p>
                 </div>
                 
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/16.png" alt="Inulina">
                     <h3 class="gradient-text">Inulina</h3>
-                    <p>Melhora a <strong>saúde intestinal</strong>, controla apetite e reduz absorção de gordura. 
-                    <strong>Adeus prisão de ventre</strong>.</p>
+                    <p>Saúde intestinal. Controla apetite e reduz absorção de gordura.</p>
                 </div>
                 
                 <div class="card">
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/18.png" alt="Cromo">
                     <h3 class="gradient-text">Picolinato de Cromo</h3>
-                    <p>O <strong>destruidor de compulsão</strong>. Controla açúcar no sangue e aniquila vontade 
-                    desesperada por doces.</p>
+                    <p>Destruidor de compulsão. Aniquila vontade por doces.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- OFERTAS -->
-    <section id="ofertas" style="background: var(--dark);">
+    <!-- BÔNUS -->
+    <section style="background: var(--light-bg);">
         <div class="container">
             <h2 class="section-title">
-                Garanta o Seu Secaps Black Chá <span class="gradient-text">AGORA</span> com 
-                <span class="gradient-text">20% de Desconto + Bônus Exclusivos!</span>
+                Achou Que Era Tudo? <span class="gradient-text">Preparamos Mais!</span>
             </h2>
             
-            <!-- BARRA DE ESCASSEZ -->
+            <p class="section-subtitle">
+                Quem compra hoje ganha <strong>3 bônus exclusivos</strong> para turbinar seus resultados!
+            </p>
+            
+            <div class="bonus-grid">
+                <!-- ⚠️ TROCAR: 3 imagens dos bônus -->
+                <div class="bonus-card">
+                    <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/LIVRO-DETOX.png" alt="Shake Detox">
+                    <span class="bonus-label gradient-text">BÔNUS #1</span>
+                    <h3>Shake Detox</h3>
+                    <p>Receitas incríveis para potencializar seu emagrecimento com deliciosos shakes detox.</p>
+                    <div class="bonus-price">
+                        <span class="old-price">R$ 350,00</span>
+                        <span class="new-price gradient-text">GRÁTIS HOJE</span>
+                    </div>
+                </div>
+                
+                <div class="bonus-card featured">
+                    <div class="bonus-badge">MAIS VALIOSO</div>
+                    <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/LIVRO-DETOX.png-dieta.png" alt="Dieta">
+                    <span class="bonus-label gradient-text">BÔNUS #2</span>
+                    <h3>Dieta Personalizada</h3>
+                    <p>3 catálogos completos com dietas personalizadas para seu biotipo. Variedade infinita de receitas!</p>
+                    <div class="bonus-price">
+                        <span class="old-price">R$ 550,00</span>
+                        <span class="new-price gradient-text">GRÁTIS HOJE</span>
+                    </div>
+                </div>
+                
+                <div class="bonus-card">
+                    <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/LIVRO-DETOX.png-queima.png" alt="Queima">
+                    <span class="bonus-label gradient-text">BÔNUS #3</span>
+                    <h3>Segredo da Queima</h3>
+                    <p>Exercícios de 5-10 minutos por dia, sem equipamentos, para turbinar seus resultados!</p>
+                    <div class="bonus-price">
+                        <span class="old-price">R$ 250,00</span>
+                        <span class="new-price gradient-text">GRÁTIS HOJE</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(131, 252, 233, 0.05); border-radius: 20px; border: 2px solid var(--primary);">
+                <p style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;">
+                    Total em Bônus: <span class="gradient-text">R$ 1.150,00</span>
+                </p>
+                <p style="font-size: 1.3rem;">
+                    Não é só um chá – é um <strong>pacote completo de transformação</strong>!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARA QUEM É / NÃO É -->
+    <section style="background: var(--dark);">
+        <div class="container">
+            <h2 class="section-title">
+                Para <span class="gradient-text">Quem É</span>, e Para 
+                <span class="red-text">Quem NÃO É</span>
+            </h2>
+            
+            <div class="who-grid">
+                <div class="who-card for">
+                    <h3>✓ O Secaps Black Chá É Para Você Que:</h3>
+                    <ul>
+                        <li>Tem dificuldade real em emagrecer, mesmo tentando de tudo</li>
+                        <li>Perdeu a autoestima e não se sente mais bem consigo mesma</li>
+                        <li>Sofre com compulsão por doces que parece incontrolável</li>
+                        <li>Sente cansaço extremo e quer energia de sobra no dia a dia</li>
+                        <li>Está disposta a dar um passo e mudar sua realidade AGORA</li>
+                        <li>Quer resultados rápidos e reais, não promessas vazias</li>
+                        <li>Busca uma solução científica, não milagres falsos</li>
+                    </ul>
+                </div>
+                
+                <div class="who-card not-for">
+                    <h3>✗ O Secaps Black Chá NÃO É Para Você Que:</h3>
+                    <ul>
+                        <li>Acha que vai emagrecer 20kg em 1 dia tomando chá</li>
+                        <li>Está satisfeita com sua realidade e não quer mudar nada</li>
+                        <li>Não se preocupa com saúde e ignora os riscos da obesidade</li>
+                        <li>Prefere reclamar da vida em vez de tomar uma atitude</li>
+                        <li>Quer continuar comendo descontroladamente sem esforço nenhum</li>
+                        <li>Não valoriza sua vida e bem-estar pessoal</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 1.2rem; line-height: 1.8; background: rgba(131, 252, 233, 0.05); padding: 2rem; border-radius: 15px;">
+                    Se você se identificou com o lado <span class="gradient-text" style="font-weight: 700;">VERDE</span>, 
+                    você está no lugar certo. Mas se se identificou com o lado 
+                    <span class="red-text" style="font-weight: 700;">VERMELHO</span>, saia dessa página agora.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFERTAS -->
+    <section id="ofertas" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title">
+                Garanta Seu Secaps Black Chá <span class="gradient-text">AGORA</span> com 
+                <span class="gradient-text">20% OFF + Bônus!</span>
+            </h2>
+            
+            <!-- BARRA ESCASSEZ -->
             <div class="scarcity-bar">
                 <p class="scarcity-text">
-                    🔥 <strong>ATENÇÃO:</strong> Apenas <span id="kits-remaining">19</span> de 50 kits com 
-                    desconto disponíveis para <strong>HOJE</strong>!
+                    🔥 <strong>ATENÇÃO:</strong> Apenas <span id="kits-remaining">19</span> de 50 kits disponíveis!
                 </p>
                 <div class="scarcity-progress">
                     <div class="scarcity-progress-bar" id="scarcity-progress" style="width: 38%;"></div>
                 </div>
             </div>
             
-            <div class="grid">
+            <!-- GRID OFERTAS - 4 CARDS ALINHADOS -->
+            <div class="offers-grid">
                 <!-- OFERTA 1 -->
                 <div class="offer-card featured">
                     <div class="offer-badge">MAIS VENDIDO</div>
-                    <!-- ⚠️ TROCAR: Imagem do kit 12 frascos -->
+                    <!-- ⚠️ TROCAR: Imagem kit 12 -->
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/secaps-black-potes.png-12-1024x534.png" alt="Kit 12">
-                    <h3 class="gradient-text">Compre 8 Leve 12</h3>
-                    <p style="color: var(--gray);">Tratamento completo para transformação total</p>
+                    <h3 class="gradient-text">Compre 8<br>Leve 12</h3>
+                    <p class="offer-subtitle">Transformação total</p>
                     
-                    <div style="background: rgba(167, 0, 0, 0.2); padding: 8px; border-radius: 10px; margin: 1rem 0;">
-                        <span style="text-decoration: line-through; color: var(--red);">de R$ 2.364,00</span>
+                    <div class="old-price-box">
+                        <span>de R$ 2.364,00</span>
                     </div>
                     
-                    <p style="color: var(--gray);">por apenas</p>
+                    <p style="color: var(--gray); font-size: 0.9rem;">por apenas</p>
                     
                     <div class="main-price">
                         <span class="installments">12x</span>
                         <span class="gradient-text price-value">R$ 87,11</span>
                     </div>
                     
-                    <p style="color: var(--gray); font-size: 1.1rem;">ou R$ 851,80 à vista</p>
+                    <p class="cash-price">ou R$ 851,80 à vista</p>
                     
-                    <!-- ⚠️ TROCAR: Link de compra Kit 12 -->
-                    <a href="https://pay.hest.com.br/a26925e8-d687-483f-9fa5-c61433b50303" class="cta-button" target="_blank">COMPRAR AGORA</a>
+                    <!-- ⚠️ TROCAR: Link -->
+                    <a href="https://pay.hest.com.br/a26925e8-d687-483f-9fa5-c61433b50303" class="cta-button" target="_blank">COMPRAR</a>
                     
-                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(131, 252, 233, 0.2);">
-                        <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/LOGO-CORREIOS-BRANCO.png" alt="Correios" style="width: 150px; margin-bottom: 0.5rem;">
-                        <p class="gradient-text" style="font-size: 1.2rem; font-weight: 700;">FRETE GRÁTIS</p>
+                    <div class="offer-features">
+                        <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/LOGO-CORREIOS-BRANCO.png" alt="Correios" class="shipping-logo">
+                        <p class="gradient-text shipping-free">FRETE GRÁTIS</p>
                     </div>
                 </div>
                 
                 <!-- OFERTA 2 -->
                 <div class="offer-card featured">
                     <div class="offer-badge">RECOMENDADO</div>
-                    <!-- ⚠️ TROCAR: Imagem do kit 5 frascos -->
+                    <!-- ⚠️ TROCAR: Imagem kit 5 -->
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/secaps-black-potes.png-5-1024x534.png" alt="Kit 5">
-                    <h3 class="gradient-text">Compre 3 Leve 5</h3>
-                    <p style="color: var(--gray);">Equilíbrio perfeito entre resultado e investimento</p>
+                    <h3 class="gradient-text">Compre 3<br>Leve 5</h3>
+                    <p class="offer-subtitle">Equilíbrio perfeito</p>
                     
-                    <div style="background: rgba(167, 0, 0, 0.2); padding: 8px; border-radius: 10px; margin: 1rem 0;">
-                        <span style="text-decoration: line-through; color: var(--red);">de R$ 985,00</span>
+                    <div class="old-price-box">
+                        <span>de R$ 985,00</span>
                     </div>
                     
-                    <p style="color: var(--gray);">por apenas</p>
+                    <p style="color: var(--gray); font-size: 0.9rem;">por apenas</p>
                     
                     <div class="main-price">
                         <span class="installments">12x</span>
                         <span class="gradient-text price-value">R$ 47,28</span>
                     </div>
                     
-                    <p style="color: var(--gray); font-size: 1.1rem;">ou R$ 461,50 à vista</p>
+                    <p class="cash-price">ou R$ 461,50 à vista</p>
                     
-                    <!-- ⚠️ TROCAR: Link de compra Kit 5 -->
-                    <a href="https://pay.hest.com.br/df3c9286-b359-4db7-bf95-05229555e2c3" class="cta-button" target="_blank">COMPRAR AGORA</a>
+                    <!-- ⚠️ TROCAR: Link -->
+                    <a href="https://pay.hest.com.br/df3c9286-b359-4db7-bf95-05229555e2c3" class="cta-button" target="_blank">COMPRAR</a>
                     
-                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(131, 252, 233, 0.2);">
-                        <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/LOGO-CORREIOS-BRANCO.png" alt="Correios" style="width: 150px; margin-bottom: 0.5rem;">
-                        <p class="gradient-text" style="font-size: 1.2rem; font-weight: 700;">FRETE GRÁTIS</p>
+                    <div class="offer-features">
+                        <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/LOGO-CORREIOS-BRANCO.png" alt="Correios" class="shipping-logo">
+                        <p class="gradient-text shipping-free">FRETE GRÁTIS</p>
                     </div>
                 </div>
                 
                 <!-- OFERTA 3 -->
                 <div class="offer-card">
-                    <!-- ⚠️ TROCAR: Imagem do kit 3 frascos -->
+                    <!-- ⚠️ TROCAR: Imagem kit 3 -->
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/secaps-black-potes.png-3-1024x534.png" alt="Kit 3">
-                    <h3 class="gradient-text">Compre 2 Leve 3</h3>
-                    <p style="color: var(--gray);">Ideal para começar sua transformação</p>
+                    <h3 class="gradient-text">Compre 2<br>Leve 3</h3>
+                    <p class="offer-subtitle">Para começar</p>
                     
-                    <div style="background: rgba(167, 0, 0, 0.2); padding: 8px; border-radius: 10px; margin: 1rem 0;">
-                        <span style="text-decoration: line-through; color: var(--red);">de R$ 591,00</span>
+                    <div class="old-price-box">
+                        <span>de R$ 591,00</span>
                     </div>
                     
-                    <p style="color: var(--gray);">por apenas</p>
+                    <p style="color: var(--gray); font-size: 0.9rem;">por apenas</p>
                     
                     <div class="main-price">
                         <span class="installments">12x</span>
                         <span class="gradient-text price-value">R$ 34,45</span>
                     </div>
                     
-                    <p style="color: var(--gray); font-size: 1.1rem;">ou R$ 335,70 à vista</p>
+                    <p class="cash-price">ou R$ 335,70 à vista</p>
                     
-                    <!-- ⚠️ TROCAR: Link de compra Kit 3 -->
-                    <a href="https://pay.hest.com.br/049641d7-d49c-4f64-891d-92fe289a06d5" class="cta-button" target="_blank">COMPRAR AGORA</a>
+                    <!-- ⚠️ TROCAR: Link -->
+                    <a href="https://pay.hest.com.br/049641d7-d49c-4f64-891d-92fe289a06d5" class="cta-button" target="_blank">COMPRAR</a>
                     
-                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(131, 252, 233, 0.2);">
-                        <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/LOGO-CORREIOS-BRANCO.png" alt="Correios" style="width: 150px; margin-bottom: 0.5rem;">
-                        <p class="gradient-text" style="font-size: 1.2rem; font-weight: 700;">FRETE GRÁTIS</p>
+                    <div class="offer-features">
+                        <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/LOGO-CORREIOS-BRANCO.png" alt="Correios" class="shipping-logo">
+                        <p class="gradient-text shipping-free">FRETE GRÁTIS</p>
                     </div>
                 </div>
                 
                 <!-- OFERTA 4 -->
                 <div class="offer-card">
-                    <!-- ⚠️ TROCAR: Imagem do kit 1 frasco -->
+                    <!-- ⚠️ TROCAR: Imagem kit 1 -->
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/secaps-black-potes.png-1-1024x534.png" alt="Kit 1">
                     <h3 class="gradient-text">1 Pote</h3>
-                    <p style="color: var(--gray);">Experimente o poder do Secaps Black Chá</p>
+                    <p class="offer-subtitle">Experimente</p>
                     
-                    <p style="color: var(--gray); margin-top: 1rem;">por apenas</p>
+                    <div class="old-price-box" style="opacity: 0;">
+                        <span>-</span>
+                    </div>
+                    
+                    <p style="color: var(--gray); font-size: 0.9rem;">por apenas</p>
                     
                     <div class="main-price">
                         <span class="installments">12x</span>
                         <span class="gradient-text price-value">R$ 24,66</span>
                     </div>
                     
-                    <p style="color: var(--gray); font-size: 1.1rem;">ou R$ 209,90 à vista</p>
+                    <p class="cash-price">ou R$ 209,90 à vista</p>
                     
-                    <!-- ⚠️ TROCAR: Link de compra Kit 1 -->
-                    <a href="https://pay.hest.com.br/047fd335-8fcf-416f-82a8-21cf39fed38b" class="cta-button" target="_blank">COMPRAR AGORA</a>
+                    <!-- ⚠️ TROCAR: Link -->
+                    <a href="https://pay.hest.com.br/047fd335-8fcf-416f-82a8-21cf39fed38b" class="cta-button" target="_blank">COMPRAR</a>
                     
-                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(131, 252, 233, 0.2);">
-                        <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/LOGO-CORREIOS-BRANCO.png" alt="Correios" style="width: 150px; margin-bottom: 0.5rem;">
-                        <p class="gradient-text" style="font-size: 1.2rem; font-weight: 700;">Frete: R$ 29,90</p>
+                    <div class="offer-features">
+                        <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/LOGO-CORREIOS-BRANCO.png" alt="Correios" class="shipping-logo">
+                        <p class="gradient-text shipping-free">Frete: R$ 29,90</p>
                     </div>
                 </div>
             </div>
             
             <!-- ⚠️ TROCAR: GIF Como Comprar -->
-            <div style="margin-top: 3rem; text-align: center;">
+            <div style="margin-top: 4rem; text-align: center;">
                 <h3 style="margin-bottom: 2rem;">Como Realizar Seu Pedido:</h3>
                 <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/Como-Comprar-Checkout_2.gif" 
                      alt="Como comprar" 
@@ -940,39 +1343,29 @@
     </section>
 
     <!-- GARANTIA -->
-    <section style="background: var(--light-bg);">
+    <section style="background: var(--dark);">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-                <!-- ⚠️ TROCAR: Imagem da garantia -->
+                <!-- ⚠️ TROCAR: Imagem garantia -->
                 <div>
                     <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/90-dias-de-garantia-secapss-black-1024x999.png" 
-                         alt="90 dias de garantia" 
+                         alt="90 dias" 
                          style="width: 100%; max-width: 400px; margin: 0 auto; display: block;">
                 </div>
                 
                 <div>
-                    <h2 class="section-title" style="text-align: left;">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">
                         90 Dias de Garantia <span class="gradient-text">Sem Risco!</span>
                     </h2>
                     
                     <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 1.5rem;">
-                        Aqui, nós <strong>assumimos o risco</strong> por você. Não queremos que você apenas 
-                        <strong>compre</strong> – queremos que você <strong>transforme sua vida</strong>.
-                    </p>
-                    
-                    <p style="font-size: 1.3rem; color: var(--primary); font-weight: 700; margin-bottom: 1.5rem;">
-                        Por isso, oferecemos 90 dias de garantia incondicional.
-                    </p>
-                    
-                    <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 1.5rem;">
-                        Se em 90 dias você não tiver os resultados que esperava, se não sentir a diferença 
-                        no seu corpo, na sua energia, na sua autoestima... <strong>devolvemos TODO o seu dinheiro</strong>. 
-                        Sem perguntas. Sem burocracia.
+                        Aqui, nós <strong>assumimos o risco</strong> por você. Se em 90 dias você não tiver resultados, 
+                        <strong>devolvemos TODO o seu dinheiro</strong>.
                     </p>
                     
                     <p style="font-size: 1.2rem; background: rgba(131, 252, 233, 0.1); padding: 1.5rem; border-left: 4px solid var(--primary); border-radius: 10px;">
-                        A transformação começa agora. <span class="gradient-text">Seu risco é ZERO</span>. 
-                        O único risco real é você <strong>não tentar</strong> e continuar onde está.
+                        <span class="gradient-text">Seu risco é ZERO</span>. 
+                        O único risco real é você <strong>não tentar</strong>.
                     </p>
                     
                     <div style="margin-top: 2rem;">
@@ -984,23 +1377,19 @@
     </section>
 
     <!-- FAQ -->
-    <section style="background: var(--dark);">
+    <section style="background: var(--light-bg);">
         <div class="container">
             <h2 class="section-title">Perguntas Frequentes</h2>
             <p style="text-align: center; font-size: 3rem; font-family: 'Russo One', sans-serif; margin-bottom: 3rem;" class="gradient-text">FAQ</p>
             
-            <div style="max-width: 900px; margin: 0 auto;">
+            <div class="faq-list">
                 <div class="faq-item">
                     <button class="faq-question">
                         <span>Quantos quilos posso perder em 1 mês?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>
-                            A perda de peso varia de pessoa para pessoa. No entanto, temos relatos de pessoas que perderam 
-                            <strong>até 20 kg</strong> em um mês! O mínimo que você pode esperar é uma perda de 
-                            <strong>5 kg</strong> no primeiro mês.
-                        </p>
+                        <p>Temos relatos de até <strong>20 kg</strong> em um mês! O mínimo esperado é <strong>5 kg</strong> no primeiro mês.</p>
                     </div>
                 </div>
                 
@@ -1010,10 +1399,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>
-                            Para obter os melhores resultados, <strong>tome 1 dose por dia</strong> ao <strong>acordar</strong>. 
-                            Não recomendamos o uso à noite, pois pode afetar seu sono.
-                        </p>
+                        <p><strong>1 dose ao acordar</strong>. Não recomendamos à noite pois pode afetar o sono.</p>
                     </div>
                 </div>
                 
@@ -1023,10 +1409,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>
-                            Você pode acompanhar pelo site dos Correios com o número de rastreio que receberá por e-mail. 
-                            Também temos suporte via WhatsApp!
-                        </p>
+                        <p>Você pode acompanhar pelo site dos Correios com o número de rastreio que receberá por e-mail. Também temos suporte via WhatsApp!</p>
                     </div>
                 </div>
                 
@@ -1036,24 +1419,17 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>
-                            Sim! <strong>Nosso suporte está disponível</strong> para te ajudar em qualquer dúvida durante 
-                            o processo de emagrecimento.
-                        </p>
+                        <p>Sim! Nosso suporte está disponível para ajudar em qualquer dúvida durante o processo.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Posso consumir estando grávida ou amamentando?</span>
+                        <span>Posso consumir grávida ou amamentando?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>
-                            <strong>Não é recomendado.</strong> Como o suplemento ativa seu metabolismo e fornece 
-                            mais energia, ele pode não ser adequado durante a gravidez ou amamentação. 
-                            <strong>Consulte sempre seu médico.</strong>
-                        </p>
+                        <p><strong>Não é recomendado.</strong> Sempre consulte seu médico antes.</p>
                     </div>
                 </div>
             </div>
@@ -1061,19 +1437,17 @@
     </section>
 
     <!-- SUPORTE -->
-    <section style="background: var(--light-bg);">
+    <section style="background: var(--dark);">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center;">
                 <div>
                     <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">
-                        <span class="gradient-text">Dúvidas</span>? Estamos aqui para te 
-                        <span class="gradient-text">ajudar!</span>
+                        <span class="gradient-text">Dúvidas</span>? Estamos aqui!
                     </h2>
                     <p style="font-size: 1.2rem; color: var(--gray); margin-bottom: 2rem;">
-                        Não tem mais desculpas! Se ainda está com alguma dúvida, fale com nossa equipe via WhatsApp. 
-                        O que mais queremos é garantir que você tenha resultados rápidos!
+                        Fale com nossa equipe via WhatsApp. Queremos garantir seus resultados!
                     </p>
-                    <!-- ⚠️ TROCAR: Link do WhatsApp -->
+                    <!-- ⚠️ TROCAR: WhatsApp -->
                     <a href="https://wa.me/message/2S3OCE7HVF5JA1" class="cta-button" target="_blank">
                         FALAR COM SUPORTE
                     </a>
@@ -1090,14 +1464,14 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <!-- ⚠️ TROCAR: Logo do footer -->
+            <!-- ⚠️ TROCAR: Logo footer -->
             <img src="https://projetosecapsblackcha.com/wp-content/uploads/2025/08/logo-secaps-black-cha-png.png" alt="Secaps Black Chá">
             <p style="color: var(--gray); margin: 1rem 0;">2025 Secaps Black Chá - Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <!-- WHATSAPP FLUTUANTE -->
-    <!-- ⚠️ TROCAR: Link do WhatsApp -->
+    <!-- ⚠️ TROCAR: WhatsApp -->
     <a href="https://wa.me/message/2S3OCE7HVF5JA1" class="whatsapp-float" target="_blank">
         <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
             <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.245 1.407 1.405-5.234-0.321-0.533c-1.331-2.217-2.029-4.778-2.029-7.411 0-7.384 6.007-13.391 13.391-13.391s13.391 6.007 13.391 13.391c0 7.384-6.007 13.391-13.391 13.391zM21.305 18.421c-0.365-0.182-2.159-1.065-2.493-1.187-0.335-0.122-0.578-0.182-0.822 0.182s-0.943 1.187-1.157 1.431c-0.213 0.243-0.426 0.273-0.791 0.091s-1.541-0.568-2.934-1.811c-1.084-0.968-1.816-2.162-2.029-2.527s-0.022-0.559 0.16-0.74c0.164-0.163 0.365-0.426 0.547-0.639s0.243-0.365 0.365-0.608c0.122-0.243 0.061-0.456-0.03-0.639s-0.822-1.981-1.127-2.713c-0.296-0.714-0.598-0.617-0.822-0.628-0.213-0.010-0.456-0.012-0.699-0.012s-0.639 0.091-0.974 0.456c-0.335 0.365-1.278 1.248-1.278 3.043s1.309 3.53 1.491 3.774c0.182 0.243 2.569 3.924 6.225 5.503 0.869 0.376 1.547 0.6 2.075 0.768 0.873 0.277 1.667 0.238 2.296 0.144 0.701-0.105 2.159-0.883 2.463-1.735s0.304-1.583 0.213-1.735c-0.091-0.152-0.335-0.243-0.7-0.426z"/>
@@ -1105,11 +1479,7 @@
     </a>
 
     <script>
-        /* ============================================
-           JAVASCRIPT - GATILHOS DE URGÊNCIA
-           ============================================ */
-        
-        // DADOS DAS VENDAS
+        // DADOS VENDAS
         const salesData = [
             { name: "Maria Silva Santos", city: "São Paulo/SP", product: "Kit de 5 frascos" },
             { name: "Ana Paula Oliveira", city: "Rio de Janeiro/RJ", product: "Kit de 12 frascos" },
@@ -1131,9 +1501,8 @@
 
         let currentSaleIndex = 0;
         let kitsRemaining = 19;
-        const MIN_KITS = 35;
+        const MIN_KITS = 3;
 
-        // NOTIFICAÇÃO DE VENDAS
         function showSalesNotification() {
             const notification = document.getElementById('sales-notification');
             const nameElement = document.getElementById('sales-name');
@@ -1148,8 +1517,8 @@
             
             notification.classList.add('show');
             
-            if (kitsRemaining < MIN_KITS) {
-                kitsRemaining++;
+            if (kitsRemaining > MIN_KITS) {
+                kitsRemaining--;
                 updateScarcityBar();
             }
             
@@ -1160,7 +1529,6 @@
             currentSaleIndex = (currentSaleIndex + 1) % salesData.length;
         }
 
-        // BARRA DE ESCASSEZ
         function updateScarcityBar() {
             const remainingElement = document.getElementById('kits-remaining');
             const progressBar = document.getElementById('scarcity-progress');
@@ -1172,7 +1540,6 @@
             }
         }
 
-        // INICIA NOTIFICAÇÕES
         setTimeout(() => {
             showSalesNotification();
             setInterval(() => {
@@ -1181,7 +1548,7 @@
             }, 12000);
         }, 3000);
 
-        // FAQ ACCORDION
+        // FAQ
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
@@ -1208,10 +1575,9 @@
             });
         });
 
-        // INICIALIZA
         updateScarcityBar();
         
-        console.log('✅ Secaps Black Chá - Landing Page Online!');
+        console.log('✅ Secaps Black Chá - Landing Page COMPLETA Online!');
     </script>
 </body>
 </html>
