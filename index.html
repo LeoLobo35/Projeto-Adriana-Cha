@@ -11,6 +11,149 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Russo+One&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* ========================================
+   BARRA DE ESCASSEZ - HEADER FIXO
+======================================== */
+
+.scarcity-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, rgba(167, 0, 0, 0.95) 0%, rgba(100, 0, 0, 0.95) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--red);
+    z-index: 9997;
+    padding: 0.8rem 1rem;
+    box-shadow: 0 4px 20px rgba(167, 0, 0, 0.4);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Quando chegar no mínimo de kits */
+.scarcity-header.minimum-reached {
+    background: linear-gradient(135deg, rgba(0, 180, 100, 0.95) 0%, rgba(0, 120, 70, 0.95) 100%);
+    border-bottom: 2px solid #00D4B3;
+    box-shadow: 0 4px 20px rgba(0, 212, 179, 0.4);
+}
+
+.scarcity-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.scarcity-header-text {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    flex: 1;
+}
+
+.scarcity-icon {
+    font-size: 1.3rem;
+    animation: pulse-icon 2s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.scarcity-header-text strong {
+    color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(131, 252, 233, 0.5);
+}
+
+/* Quando mínimo atingido */
+.scarcity-header.minimum-reached .scarcity-header-text strong {
+    color: #FFD700;
+}
+
+.scarcity-header-progress {
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.scarcity-header-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.scarcity-header-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    border-radius: 10px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 15px rgba(131, 252, 233, 0.6);
+}
+
+/* Ajuste de padding do body para não ficar atrás do header */
+body {
+    padding-top: 60px; /* Altura do header fixo */
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .scarcity-header {
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .scarcity-header-content {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .scarcity-header-text {
+        font-size: 0.85rem;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .scarcity-icon {
+        font-size: 1.1rem;
+    }
+    
+    .scarcity-header-text strong {
+        font-size: 0.95rem;
+    }
+    
+    .scarcity-header-progress {
+        width: 100%;
+    }
+    
+    body {
+        padding-top: 85px; /* Altura maior no mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .scarcity-header-text {
+        font-size: 0.75rem;
+    }
+    
+    .scarcity-header-text strong {
+        font-size: 0.85rem;
+    }
+    
+    .scarcity-header-bar {
+        height: 8px;
+    }
+}
+        
         * {
             margin: 0;
             padding: 0;
@@ -1133,6 +1276,22 @@ html, body {
     </style>
 </head>
 <body>
+    <!-- BARRA DE ESCASSEZ FIXO - HEADER -->
+<div id="scarcity-header" class="scarcity-header">
+    <div class="scarcity-header-content">
+        <div class="scarcity-header-text">
+            <span class="scarcity-icon">⚠️</span>
+            <span id="scarcity-header-message">
+                ATENÇÃO: Apenas <strong id="header-kits-count">19</strong> de 50 kits disponíveis!
+            </span>
+        </div>
+        <div class="scarcity-header-progress">
+            <div class="scarcity-header-bar">
+                <div id="header-progress-fill" class="scarcity-header-fill"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- NOTIFICAÇÃO VENDAS -->
     <div id="sales-notification" class="sales-notification">
@@ -1873,16 +2032,6 @@ html, body {
                 <span class="gradient-text">20% OFF + Bônus!</span>
             </h2>
             
-            <!-- BARRA ESCASSEZ -->
-            <div class="scarcity-bar">
-                <p class="scarcity-text">
-                    🔥 <strong>ATENÇÃO:</strong> Apenas <span id="kits-remaining">19</span> de 50 kits disponíveis!
-                </p>
-                <div class="scarcity-progress">
-                    <div class="scarcity-progress-bar" id="scarcity-progress" style="width: 38%;"></div>
-                </div>
-            </div>
-            
             <!-- GRID OFERTAS - 4 CARDS ALINHADOS -->
             <div class="offers-grid">
                 <!-- OFERTA 1 -->
@@ -2326,6 +2475,49 @@ html, body {
     </a>
 
     <script>
+        /* ========================================
+           SISTEMA DE ESCASSEZ - HEADER FIXO
+        ======================================== */
+
+        let kitsRemaining = 19;
+        const MIN_KITS = 3;
+        const TOTAL_KITS = 50;
+        let minimumReached = false;
+
+        // Atualiza barra de escassez no header
+        function updateScarcityHeader() {
+            const headerCount = document.getElementById('header-kits-count');
+            const headerProgressFill = document.getElementById('header-progress-fill');
+            const scarcityHeader = document.getElementById('scarcity-header');
+            const headerMessage = document.getElementById('scarcity-header-message');
+            
+            if (!headerCount || !headerProgressFill || !scarcityHeader || !headerMessage) return;
+            
+            // Atualiza contador
+            headerCount.textContent = kitsRemaining;
+            
+            // Atualiza barra de progresso
+            const percentage = (kitsRemaining / TOTAL_KITS) * 100;
+            headerProgressFill.style.width = percentage + '%';
+            
+            // Quando atingir o mínimo
+            if (kitsRemaining <= MIN_KITS && !minimumReached) {
+                minimumReached = true;
+                scarcityHeader.classList.add('minimum-reached');
+                
+                // Muda mensagem
+                headerMessage.innerHTML = `
+                    <span class="scarcity-icon">🎉</span>
+                    <span>
+                        <strong>DESCONTO GARANTIDO!</strong> Enquanto você estiver nesta página, o desconto está reservado para você.
+                    </span>
+                `;
+                
+                // Remove a barra de progresso
+                document.querySelector('.scarcity-header-progress').style.display = 'none';
+            }
+        }
+
         // DADOS VENDAS
         const salesData = [
             { name: "Maria Silva Santos", city: "São Paulo/SP", product: "Kit de 5 frascos" },
@@ -2347,55 +2539,57 @@ html, body {
         ];
 
         let currentSaleIndex = 0;
-        let kitsRemaining = 19;
-        const MIN_KITS = 3;
 
+        // Mostra notificação de venda
         function showSalesNotification() {
             const notification = document.getElementById('sales-notification');
-            const nameElement = document.getElementById('sales-name');
-            const cityElement = document.getElementById('sales-city');
-            const productElement = document.getElementById('sales-product');
+            if (!notification) return;
             
             const sale = salesData[currentSaleIndex];
             
-            nameElement.textContent = sale.name;
-            cityElement.textContent = sale.city;
-            productElement.textContent = `acabou de comprar o ${sale.product}`;
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; animation: pulse-dot 1.5s ease-in-out infinite;"></div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 3px;">${sale.name}</div>
+                        <div style="font-size: 0.75rem; opacity: 0.9;">de ${sale.city}</div>
+                        <div style="font-size: 0.75rem; color: var(--primary); margin-top: 3px;">acabou de comprar o ${sale.product}</div>
+                    </div>
+                </div>
+            `;
             
             notification.classList.add('show');
             
+            // Decrementa kits APENAS se não atingiu o mínimo
             if (kitsRemaining > MIN_KITS) {
                 kitsRemaining--;
-                updateScarcityBar();
+                updateScarcityHeader();
             }
             
+            // Esconde após 6 segundos
             setTimeout(() => {
                 notification.classList.remove('show');
-            }, 5000);
+            }, 6000);
             
+            // Próxima venda
             currentSaleIndex = (currentSaleIndex + 1) % salesData.length;
         }
 
-        function updateScarcityBar() {
-            const remainingElement = document.getElementById('kits-remaining');
-            const progressBar = document.getElementById('scarcity-progress');
-            
-            if (remainingElement && progressBar) {
-                remainingElement.textContent = kitsRemaining;
-                const percentage = (kitsRemaining / 50) * 100;
-                progressBar.style.width = percentage + '%';
-            }
-        }
-
+        // Inicia sistema após 3 segundos
         setTimeout(() => {
             showSalesNotification();
+            updateScarcityHeader();
+            
+            // Intervalo aleatório entre vendas (8-12 segundos)
             setInterval(() => {
                 const randomDelay = Math.random() * 4000 + 8000;
                 setTimeout(showSalesNotification, randomDelay);
             }, 12000);
         }, 3000);
 
-        // FAQ
+        /* ========================================
+           FAQ ACCORDION
+        ======================================== */
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
@@ -2411,7 +2605,9 @@ html, body {
             });
         });
 
-        // SMOOTH SCROLL
+        /* ========================================
+           SMOOTH SCROLL
+        ======================================== */
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -2422,9 +2618,9 @@ html, body {
             });
         });
 
-        updateScarcityBar();
-        
-        console.log('✅ Secaps Black Chá - Landing Page COMPLETA Online!');
+        console.log('✅ Secaps Black Chá - Landing Page COMPLETA com Header Fixo Online!');
     </script>
+</body>
+</html>
 </body>
 </html>
