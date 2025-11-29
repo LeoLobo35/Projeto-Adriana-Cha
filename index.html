@@ -1028,7 +1028,138 @@ html, body {
 
 * {
     max-width: 100%;
-}  
+} 
+
+/* ============================================
+   CORREÇÕES MOBILE - PRINTS WHATSAPP E PROTOCOLO
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* ===== 1️⃣ CORREÇÃO: PRINTS WHATSAPP ===== */
+    
+    /* Grid vira 1 coluna (vertical) */
+    section div[style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 0 !important;
+    }
+    
+    /* Container dos prints - altura ajustada */
+    section div[style*="height: 500px"] {
+        height: 450px !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Imagem do print - sem cortar, ajustada */
+    section img[alt*="Depoimento WhatsApp"] {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+    
+    /* Card externo do print - sem overflow */
+    section div[style*="background: linear-gradient(135deg, rgba(131, 252, 233, 0.05)"] {
+        padding: 1rem !important;
+        margin: 0 !important;
+        overflow: visible !important;
+    }
+    
+    /* Container da imagem - sem fundo preto aparecendo */
+    section div[style*="background: #000"] {
+        background: transparent !important;
+    }
+    
+    
+    /* ===== 2️⃣ CORREÇÃO: PROTOCOLO 21 DIAS ===== */
+    
+    /* Container principal do protocolo */
+    section div[style*="max-width: 1000px"] {
+        max-width: 100% !important;
+        padding: 1.5rem !important;
+    }
+    
+    /* Card externo do protocolo */
+    section div[style*="background: linear-gradient(135deg, rgba(131, 252, 233, 0.08)"] {
+        padding: 1.5rem !important;
+    }
+    
+    /* Container interno da imagem do protocolo */
+    section div[style*="background: rgba(2, 9, 14, 0.6)"] {
+        padding: 1rem !important;
+    }
+    
+    /* IMAGEM DO PROTOCOLO - MAIOR */
+    section img[alt*="Protocolo 21 Dias"] {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        min-height: 300px !important;
+        object-fit: contain !important;
+    }
+    
+    /* Grid dos 3 cards (Manhã, Hidratação, Consistência) - VIRA 1 COLUNA */
+    section div[style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    /* Cards individuais - ajustados */
+    section div[style*="grid-template-columns: repeat(3, 1fr)"] > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 1.2rem !important;
+    }
+    
+    /* Badge "PROTOCOLO OFICIAL" - responsivo */
+    section div[style*="PROTOCOLO OFICIAL"] {
+        font-size: 0.8rem !important;
+        padding: 8px 15px !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* Mobile pequeno (< 480px) */
+@media (max-width: 480px) {
+    /* Prints WhatsApp - altura menor ainda */
+    section div[style*="height: 500px"],
+    section div[style*="height: 450px"] {
+        height: 380px !important;
+    }
+    
+    /* Protocolo - ajustes finos */
+    section div[style*="max-width: 1000px"] {
+        padding: 1rem !important;
+    }
+    
+    section img[alt*="Protocolo 21 Dias"] {
+        min-height: 250px !important;
+    }
+}
+
+/* Garante que nada saia pela lateral */
+@media (max-width: 768px) {
+    .container,
+    section > div,
+    section div {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Remove qualquer margem/padding que cause overflow */
+    section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Container principal sempre dentro da tela */
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
     </style>
 </head>
 <body>
