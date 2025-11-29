@@ -1072,92 +1072,62 @@ html, body {
     }
     
     
-    /* ===== 2️⃣ CORREÇÃO: PROTOCOLO 21 DIAS ===== */
-    
-    /* Container principal do protocolo */
+    /* ===== CORREÇÃO ESPECÍFICA: IMAGEM PROTOCOLO 21 DIAS ===== */
+
+@media (max-width: 768px) {
+    /* Container principal do protocolo - max-width removido */
     section div[style*="max-width: 1000px"] {
         max-width: 100% !important;
-        padding: 1.5rem !important;
+        padding: 0.5rem !important;
     }
     
-    /* Card externo do protocolo */
+    /* Card externo - padding reduzido */
     section div[style*="background: linear-gradient(135deg, rgba(131, 252, 233, 0.08)"] {
-        padding: 1.5rem !important;
-    }
-    
-    /* Container interno da imagem do protocolo */
-    section div[style*="background: rgba(2, 9, 14, 0.6)"] {
         padding: 1rem !important;
     }
     
-    /* IMAGEM DO PROTOCOLO - MAIOR */
-    section img[alt*="Protocolo 21 Dias"] {
+    /* Container interno PRETO da imagem - SEM padding */
+    section div[style*="background: rgba(2, 9, 14, 0.6)"] {
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+    }
+    
+    /* IMAGEM PROTOCOLO - OCUPAR 100% DO ESPAÇO */
+    section img[alt*="Protocolo 21 Dias"],
+    section img[src*="WhatsApp_Image_2025-11-17_at_22.41.17_3"] {
         width: 100% !important;
         height: auto !important;
         max-width: 100% !important;
-        min-height: 300px !important;
+        min-height: auto !important;
         object-fit: contain !important;
+        border-radius: 15px !important;
+        display: block !important;
+        margin: 0 auto !important;
     }
     
-    /* Grid dos 3 cards (Manhã, Hidratação, Consistência) - VIRA 1 COLUNA */
+    /* Grid dos 3 cards - vira 1 coluna */
     section div[style*="grid-template-columns: repeat(3, 1fr)"] {
         grid-template-columns: 1fr !important;
         gap: 1rem !important;
+        margin-top: 1.5rem !important;
     }
     
-    /* Cards individuais - ajustados */
-    section div[style*="grid-template-columns: repeat(3, 1fr)"] > div {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 1.2rem !important;
-    }
-    
-    /* Badge "PROTOCOLO OFICIAL" - responsivo */
+    /* Badge "PROTOCOLO OFICIAL" */
     section div[style*="PROTOCOLO OFICIAL"] {
-        font-size: 0.8rem !important;
-        padding: 8px 15px !important;
-        white-space: nowrap !important;
+        font-size: 0.75rem !important;
+        padding: 6px 12px !important;
     }
 }
 
-/* Mobile pequeno (< 480px) */
+/* Mobile pequeno */
 @media (max-width: 480px) {
-    /* Prints WhatsApp - altura menor ainda */
-    section div[style*="height: 500px"],
-    section div[style*="height: 450px"] {
-        height: 380px !important;
-    }
-    
-    /* Protocolo - ajustes finos */
     section div[style*="max-width: 1000px"] {
-        padding: 1rem !important;
+        padding: 0.3rem !important;
     }
     
-    section img[alt*="Protocolo 21 Dias"] {
-        min-height: 250px !important;
-    }
-}
-
-/* Garante que nada saia pela lateral */
-@media (max-width: 768px) {
-    .container,
-    section > div,
-    section div {
-        max-width: 100vw !important;
-        overflow-x: hidden !important;
-    }
-    
-    /* Remove qualquer margem/padding que cause overflow */
-    section {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-        overflow-x: hidden !important;
-    }
-    
-    /* Container principal sempre dentro da tela */
-    .container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+    section div[style*="background: linear-gradient(135deg, rgba(131, 252, 233, 0.08)"] {
+        padding: 0.8rem !important;
     }
 }
     </style>
